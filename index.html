@@ -15,226 +15,118 @@
       --radius: 12px;
       --shadow: 0 8px 24px #00e5ff18;
     }
-
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
       background: radial-gradient(90vw 80vh at 70% -20%, #0b1822 0%, #07090d 60%, #06080b 100%);
       color: var(--text);
       font-family: system-ui, "Segoe UI", Roboto, sans-serif;
-      transition: background 0.5s;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Header */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      position: sticky; top: 0; z-index: 10;
       background: rgba(7, 9, 13, 0.9);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #00e5ff11;
     }
-
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 22px;
-      max-width: 1200px;
-      margin: auto;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 22px; max-width: 1200px; margin: auto; flex-wrap: wrap; gap: 12px;
     }
-
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 18px;
+      display: flex; align-items: center; gap: 8px; text-decoration: none;
+      color: var(--text); font-weight: 700; font-size: 18px;
     }
     .dot {
-      width: 10px; height: 10px;
-      background: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent);
+      width: 10px; height: 10px; background: var(--accent);
+      border-radius: 50%; box-shadow: 0 0 10px var(--accent);
     }
 
-    .tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
     .tab {
       border: 1px solid var(--accent-soft);
-      color: var(--text);
-      background: #0a0f15;
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all .25s;
+      color: var(--text); background: #0a0f15;
+      border-radius: 999px; padding: 8px 16px; font-size: 14px;
+      cursor: pointer; transition: all .25s;
     }
-    .tab.active {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #031319;
-    }
-    .tab:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 10px var(--accent-soft);
-    }
+    .tab.active { border-color: var(--accent); background: var(--accent); color: #031319; }
+    .tab:hover { box-shadow: 0 0 10px var(--accent-soft); }
 
-    .lang {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .lang { display: flex; align-items: center; gap: 6px; }
     .lang button {
-      background: transparent;
-      border: 1px solid var(--accent-soft);
-      color: var(--text);
-      padding: 6px 10px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: .25s;
+      background: transparent; border: 1px solid var(--accent-soft);
+      color: var(--text); padding: 6px 10px; border-radius: 999px;
+      cursor: pointer; transition: .25s;
     }
-    .lang button:hover {
-      background: var(--accent);
-      color: #031319;
-    }
+    .lang button:hover { background: var(--accent); color: #031319; }
 
-    /* Main */
-    main {
-      flex: 1;
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 24px;
-      width: 100%;
-    }
-
-    section {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    section.active {
-      display: block;
-      opacity: 1;
-    }
-
-    h2 {
-      font-size: 24px;
-      text-shadow: 0 0 14px #00e5ff33;
-      margin-bottom: 8px;
-    }
-
+    main { flex: 1; max-width: 1200px; margin: 40px auto; padding: 0 24px; width: 100%; }
+    section { display: none; opacity: 0; transition: opacity .4s ease; }
+    section.active { display: block; opacity: 1; }
+    h2 { font-size: 24px; margin-bottom: 8px; }
     p { color: var(--muted); }
 
-    /* Grid */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 24px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 24px;
     }
 
     .card {
-      background: var(--panel);
-      border: 1px solid #0e1b2333;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform .25s, box-shadow .25s;
-      min-height: 340px;
+      background: var(--panel); border: 1px solid #0e1b2333;
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform .25s, box-shadow .25s; position: relative;
     }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px #00e5ff22; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 0 16px #00e5ff33; }
 
     .thumb {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16/9;
-      object-fit: contain;
-      background: #0a1218;
-      border-bottom: 1px solid #0e1b2333;
+      width: 100%; height: auto; aspect-ratio: 16/9;
+      object-fit: contain; background: #0a1218; border-bottom: 1px solid #0e1b2333;
     }
 
-    .card__body {
-      padding: 14px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .btn {
-      border: 1px solid var(--accent-soft);
-      background: transparent;
-      color: var(--text);
-      padding: 8px 14px;
-      border-radius: 10px;
-      cursor: pointer;
+    .soon-badge {
+      position: absolute; top: 10px; left: 10px;
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent); font-size: 13px; font-weight: 600;
+      padding: 5px 12px; border-radius: 999px;
+      backdrop-filter: blur(4px); cursor: pointer;
       transition: .25s;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
     }
-    .btn:hover {
-      background: var(--accent);
-      color: #031319;
-      border-color: var(--accent);
-    }
+    .soon-badge:hover { background: rgba(0,229,255,0.25); }
 
-    /* About */
+    .card__body { padding: 14px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .btn {
+      border: 1px solid var(--accent-soft); background: transparent;
+      color: var(--text); padding: 8px 14px; border-radius: 10px;
+      cursor: pointer; transition: .25s; text-decoration: none; text-align: center; display: inline-block;
+    }
+    .btn:hover { background: var(--accent); color: #031319; border-color: var(--accent); }
+
     .about {
-      background: var(--panel);
-      border: 1px solid #0e1b2333;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 22px;
-      line-height: 1.6;
+      background: var(--panel); border: 1px solid #0e1b2333;
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 18px 22px; line-height: 1.6;
     }
 
-    /* Footer */
     footer {
-      border-top: 1px solid #00e5ff11;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: #9ed1df;
-      padding: 14px 24px;
-      flex-wrap: wrap;
-      gap: 10px;
+      border-top: 1px solid #00e5ff11; display: flex;
+      justify-content: space-between; align-items: center;
+      font-size: 13px; color: #9ed1df; padding: 14px 24px;
+      flex-wrap: wrap; gap: 10px;
     }
 
-    /* Modal */
     .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: #000a;
-      place-items: center;
-      z-index: 99;
+      display: none; position: fixed; inset: 0;
+      background: #000a; place-items: center; z-index: 99;
     }
     .modal-box {
-      background: var(--panel);
-      border: 1px solid var(--accent-soft);
-      padding: 20px;
-      border-radius: var(--radius);
-      box-shadow: 0 10px 40px #000;
-      max-width: 400px;
-      width: 90%;
+      background: var(--panel); border: 1px solid var(--accent-soft);
+      padding: 20px; border-radius: var(--radius);
+      box-shadow: 0 10px 40px #000; max-width: 400px; width: 90%;
     }
   </style>
 </head>
@@ -255,14 +147,14 @@
 
   <main>
     <section id="roblox" class="active">
-      <h2>Roblox Games</h2>
-      <p>Все проекты, созданные <b>OXeall Studios</b>. Ниже приведён список активных игр.</p>
+      <h2 data-ru="Roblox Игры" data-en="Roblox Games">Roblox Игры</h2>
+      <p data-ru="Все проекты, созданные OXeall Studios." data-en="All projects created by OXeall Studios.">Все проекты, созданные OXeall Studios.</p>
       <div class="grid">
         <article class="card">
           <img class="thumb" src="https://tr.rbxcdn.com/180DAY-e53f8d0e48febf30c5baf27d7b5155e2/352/352/Image/Png/noFilter" alt="Russian Town 2071">
           <div class="card__body">
             <h3>Russian Town 2071</h3>
-            <a href="https://www.roblox.com/games/16064252635/2071-VC" target="_blank" class="btn">Перейти</a>
+            <a href="https://www.roblox.com/games/16064252635/2071-VC" target="_blank" class="btn" data-ru="Перейти" data-en="Play">Перейти</a>
           </div>
         </article>
 
@@ -270,15 +162,16 @@
           <img class="thumb" src="https://tr.rbxcdn.com/180DAY-65050422dd55f23af40087e5305b689b/352/352/Image/Png/noFilter" alt="City DayX">
           <div class="card__body">
             <h3>City DayX</h3>
-            <a href="https://www.roblox.com/games/12963395883/City-Day-X" target="_blank" class="btn">Перейти</a>
+            <a href="https://www.roblox.com/games/12963395883/City-Day-X" target="_blank" class="btn" data-ru="Перейти" data-en="Play">Перейти</a>
           </div>
         </article>
 
         <article class="card">
+          <span class="soon-badge" onclick="openSoon()">SOON</span>
           <img class="thumb" src="https://t2.rbxcdn.com/180DAY-cf7ec8785144e39d59caace447f63ba7" alt="City DayX 2">
           <div class="card__body">
-            <h3>City DayX 2 (BETA)</h3>
-            <button class="btn" onclick="openBeta()">Узнать</button>
+            <h3>City DayX 2</h3>
+            <button class="btn" onclick="openBeta()" data-ru="Узнать" data-en="Info">Узнать</button>
           </div>
         </article>
 
@@ -286,7 +179,7 @@
           <img class="thumb" src="https://tr.rbxcdn.com/180DAY-95d197836434662466c18c6bf36f8b28/150/150/Image/Webp/noFilter" alt="Racing Friends">
           <div class="card__body">
             <h3>Racing Friends</h3>
-            <a href="https://www.roblox.com/games/18311121604/Racing-Friends" target="_blank" class="btn">Перейти</a>
+            <a href="https://www.roblox.com/games/18311121604/Racing-Friends" target="_blank" class="btn" data-ru="Перейти" data-en="Play">Перейти</a>
           </div>
         </article>
       </div>
@@ -294,35 +187,38 @@
 
     <section id="steam">
       <h2>Steam Games</h2>
-      <p>Этот раздел пока в разработке. В будущем здесь появятся проекты <b>OXeall Studios</b> для Steam.</p>
+      <p>Раздел в разработке.</p>
     </section>
 
     <section id="about">
       <h2>About OXeall</h2>
       <div class="about">
-        <p>OXeall — технологическая инициатива, начавшаяся в 2023 году, ориентированная на скорость, точность и развитие инженерных решений.</p>
-        <p>OXeall Studios — игровое подразделение, созданное в 2025 году. Здесь рождаются концепции, механики и проекты, задающие новые стандарты игрового будущего.</p>
+        <p>OXeall — технологическая инициатива, начавшаяся в 2023 году, ориентированная на скорость и развитие инженерных решений.</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div>Игры созданы OXeall Studios. Несанкционированное копирование и публикация могут привести к ограничению доступа.</div>
-    <div>Version: 1.0.4.0, 25H4</div>
+    <div>Игры созданы OXeall Studios.</div>
+    <div>Version: 1.0.5.0, 25H4</div>
   </footer>
 
   <div class="modal" id="modal">
     <div class="modal-box">
-      <h3>City DayX 2 (BETA)</h3>
-      <p>Игра находится на стадии BETA. Возможны ошибки и недоступность на устройствах. Перейти к тестовой версии?</p>
-      <button class="btn" onclick="goBeta()">Перейти</button>
-      <button class="btn" onclick="closeBeta()">Отмена</button>
+      <h3>City DayX 2 — SOON</h3>
+      <p>Игра рассчитана на игроков 9+.  
+      Предварительный выпуск: декабрь 2025 года.  
+      Следите за обновлениями.</p>
+      <button class="btn" onclick="closeBeta()">Закрыть</button>
     </div>
   </div>
 
   <script>
     const tabs = document.querySelectorAll('.tab');
     const sections = document.querySelectorAll('section');
+    const ruBtn = document.getElementById('ru');
+    const enBtn = document.getElementById('en');
+
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
@@ -330,18 +226,23 @@
         const target = tab.dataset.tab;
         sections.forEach(sec => {
           sec.classList.remove('active');
-          if(sec.id === target) sec.classList.add('active');
+          if (sec.id === target) sec.classList.add('active');
         });
       });
     });
 
+    function setLang(lang) {
+      document.querySelectorAll('[data-ru]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+    ruBtn.onclick = () => setLang('ru');
+    enBtn.onclick = () => setLang('en');
+
     const modal = document.getElementById('modal');
     function openBeta() { modal.style.display = 'grid'; }
+    function openSoon() { modal.style.display = 'grid'; }
     function closeBeta() { modal.style.display = 'none'; }
-    function goBeta() {
-      window.open('https://www.roblox.com/games/91741785184440/City-Day-X', '_blank');
-      closeBeta();
-    }
   </script>
 </body>
 </html>
