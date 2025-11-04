@@ -162,8 +162,9 @@
 
     .thumb {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: contain;
       background: #0a1218;
       border-bottom: 1px solid #0e1b2333;
     }
@@ -264,6 +265,7 @@
             <a href="https://www.roblox.com/games/16064252635/2071-VC" target="_blank" class="btn">Перейти</a>
           </div>
         </article>
+
         <article class="card">
           <img class="thumb" src="https://tr.rbxcdn.com/180DAY-65050422dd55f23af40087e5305b689b/352/352/Image/Png/noFilter" alt="City DayX">
           <div class="card__body">
@@ -271,11 +273,20 @@
             <a href="https://www.roblox.com/games/12963395883/City-Day-X" target="_blank" class="btn">Перейти</a>
           </div>
         </article>
+
         <article class="card">
           <img class="thumb" src="https://t2.rbxcdn.com/180DAY-cf7ec8785144e39d59caace447f63ba7" alt="City DayX 2">
           <div class="card__body">
             <h3>City DayX 2 (BETA)</h3>
             <button class="btn" onclick="openBeta()">Узнать</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="thumb" src="https://tr.rbxcdn.com/180DAY-95d197836434662466c18c6bf36f8b28/150/150/Image/Webp/noFilter" alt="Racing Friends">
+          <div class="card__body">
+            <h3>Racing Friends</h3>
+            <a href="https://www.roblox.com/games/18311121604/Racing-Friends" target="_blank" class="btn">Перейти</a>
           </div>
         </article>
       </div>
@@ -297,7 +308,7 @@
 
   <footer>
     <div>Игры созданы OXeall Studios. Несанкционированное копирование и публикация могут привести к ограничению доступа.</div>
-    <div>Version: 1.0.3.1, 25H4</div>
+    <div>Version: 1.0.4.0, 25H4</div>
   </footer>
 
   <div class="modal" id="modal">
