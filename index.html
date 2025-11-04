@@ -3,10 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OXeall.Version.Info</title>
+  <title>OXeall.Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at center, #001, #000);
+      color: #0ff;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid #0ff3;
+    }
+    header h1 {
+      font-size: 1.8em;
+      text-shadow: 0 0 10px #0ff;
+    }
+    #lang-toggle {
+      background: transparent;
+      border: 1px solid #0ff;
+      color: #0ff;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #lang-toggle:hover {
+      background: #0ff;
+      color: #000;
+    }
+    section {
+      padding: 40px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #0ff;
+    }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .game-card {
+      background: #010f1a;
+      border: 1px solid #0ff3;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #0ff2;
+      width: 280px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .game-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px #0ff5;
+    }
+    .game-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .game-card h3 {
+      margin: 10px 0;
+      font-size: 1.3em;
+    }
+    .game-card p {
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      border: 1px solid #0ff;
+      color: #0ff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #0ff;
+      color: #000;
+    }
+    footer {
+      text-align: right;
+      padding: 10px 20px;
+      font-size: 0.8em;
+      border-top: 1px solid #0ff3;
+      color: #0ff8;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #011;
+      border: 1px solid #0ff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 350px;
+      text-align: center;
+    }
+    .modal-content h3 { color: #0ff; }
+    .modal-content p { color: #ccc; }
+    .modal-content button {
+      margin-top: 10px;
+      background: transparent;
+      border: 1px solid #0ff;
+      color: #0ff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .modal-content button:hover {
+      background: #0ff;
+      color: #000;
+    }
+  </style>
 </head>
-<body style="background:#000;color:#0ff;text-align:center;padding-top:15%">
-  <h1>System OXeall.Version.Info runned</h1>
-  <p>Created by OXeall</p>
+<body>
+  <header>
+    <h1 id="title">OXeall.Games</h1>
+    <button id="lang-toggle">EN</button>
+  </header>
+
+  <section>
+    <h2 id="roblox-title">Игры Roblox</h2>
+    <div class="games-grid">
+      <div class="game-card">
+        <img src="https://tr.rbxcdn.com/f79960acfcce02f735d13e81d41248a7/420/420/Image/Png" alt="Russian Town 2071">
+        <h3>Russian Town 2071</h3>
+        <a href="https://www.roblox.com/games/16064252635/2071-VC" class="btn" id="btn-go1">Перейти</a>
+      </div>
+      <div class="game-card">
+        <img src="https://tr.rbxcdn.com/fb3c7a7a3e9f189ba63e6a1b9292f776/420/420/Image/Png" alt="City DayX">
+        <h3>City DayX</h3>
+        <a href="https://www.roblox.com/games/12963395883/City-Day-X" class="btn" id="btn-go2">Перейти</a>
+      </div>
+      <div class="game-card">
+        <img src="https://tr.rbxcdn.com/94a6d45dfd1d1a2a6c45f1c1d54b25d9/420/420/Image/Png" alt="City DayX 2">
+        <h3>City DayX 2 (BETA)</h3>
+        <p>Релиз запланирован: 1 Января 2026</p>
+        <button class="btn" onclick="openModal()">Узнать</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="steam-title">Игры Steam</h2>
+    <p style="text-align:center; color:#888;">Пока нет опубликованных проектов...</p>
+  </section>
+
+  <footer>
+    <span id="version">Версия: 1.0.1.0, 25H4</span>
+  </footer>
+
+  <div class="modal" id="betaModal">
+    <div class="modal-content">
+      <h3>City DayX 2 (BETA)</h3>
+      <p>Эта игра находится на стадии <b>BETA</b> и может быть недоступна на некоторых или всех устройствах.<br><br>
+      Вы уверены, что хотите перейти к тестовой версии?</p>
+      <button onclick="confirmRedirect()">Да, перейти</button>
+      <button onclick="closeModal()">Отмена</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('betaModal');
+    const version = "1.0.1.0, 25H4";
+
+    function openModal(){ modal.style.display = 'flex'; }
+    function closeModal(){ modal.style.display = 'none'; }
+    function confirmRedirect(){
+      window.open('https://www.roblox.com/games/91741785184440/City-Day-X', '_blank');
+      closeModal();
+    }
+
+    // Переключение языка
+    const langBtn = document.getElementById('lang-toggle');
+    let currentLang = 'ru';
+    const texts = {
+      ru: {
+        title: 'OXeall.Games',
+        roblox: 'Игры Roblox',
+        steam: 'Игры Steam',
+        go: 'Перейти',
+        learn: 'Узнать',
+        version: 'Версия: ' + version
+      },
+      en: {
+        title: 'OXeall.Games',
+        roblox: 'Roblox Games',
+        steam: 'Steam Games',
+        go: 'Go',
+        learn: 'Learn',
+        version: 'Version: ' + version
+      }
+    };
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'ru' ? 'en' : 'ru';
+      const lang = texts[currentLang];
+      document.getElementById('title').textContent = lang.title;
+      document.getElementById('roblox-title').textContent = lang.roblox;
+      document.getElementById('steam-title').textContent = lang.steam;
+      document.getElementById('btn-go1').textContent = lang.go;
+      document.getElementById('btn-go2').textContent = lang.go;
+      document.getElementById('version').textContent = lang.version;
+      document.querySelector('.game-card button').textContent = lang.learn;
+      langBtn.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+    });
+  </script>
 </body>
 </html>
