@@ -2,23 +2,29 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>OXeall Studios | CLNEWS</title>
+  <title>OXeall Studios | CLNEWS 999V</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Официальная лента обновлений и новостей игр OXeall Studios." />
+  <meta name="description" content="OXeall Studios CLNEWS 999V — официальный центр обновлений и патч-ноутов." />
   <style>
     :root {
-      --bg: #05070b;
-      --bg-panel: #0b0f17;
-      --bg-card: #0f141d;
-      --accent: #1a9fff;
-      --accent-soft: rgba(26,159,255,0.14);
-      --accent-strong: #55c6ff;
-      --text: #f5f7fb;
-      --muted: #a5afc3;
-      --border: #202736;
+      --bg: #02040a;
+      --bg-gradient: radial-gradient(circle at top, rgba(0,180,255,0.16), transparent 60%);
+      --bg-card: #070a12;
+      --bg-card-soft: #0c111b;
+      --bg-panel: #050710;
+      --accent: #00aaff;
+      --accent-soft: rgba(0,170,255,0.14);
+      --accent-strong: #35c3ff;
+      --accent-alt: #00ffc6;
+      --text: #f5f7ff;
+      --muted: #a0acc5;
+      --border: #222a38;
+      --danger: #ff4a6a;
+      --radius-xl: 22px;
       --radius-lg: 18px;
       --radius-md: 12px;
-      --shadow: 0 18px 42px rgba(0,0,0,0.8);
+      --shadow-strong: 0 26px 80px rgba(0,0,0,0.95);
+      --shadow-soft: 0 18px 48px rgba(0,0,0,0.9);
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --tr-fast: 0.18s ease-out;
     }
@@ -31,9 +37,7 @@
 
     body {
       font-family: var(--font-main);
-      background:
-        radial-gradient(circle at top, rgba(26,159,255,0.09), transparent 55%),
-        #020308;
+      background: var(--bg-gradient), var(--bg);
       color: var(--text);
       min-height: 100vh;
     }
@@ -48,9 +52,9 @@
     }
 
     .page {
-      max-width: 1120px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 22px 16px 40px;
+      padding: 22px 18px 40px;
     }
 
     /* HEADER */
@@ -59,40 +63,38 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 18px;
       padding: 14px 18px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(
-        135deg,
-        rgba(26,159,255,0.16),
-        rgba(3,5,10,0.98)
-      );
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(0,170,255,0.18), rgba(3,5,10,0.98));
       border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
       position: sticky;
       top: 10px;
-      z-index: 30;
-      backdrop-filter: blur(14px);
+      z-index: 40;
+      backdrop-filter: blur(16px);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .brand-logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 25% 0, #ffffff, #1a9fff);
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 20% 0, #ffffff, #00aaff);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 18px;
+      font-size: 20px;
       color: #020308;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.9);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.98);
     }
 
     .brand-text {
@@ -103,9 +105,9 @@
 
     .brand-text span:first-child {
       font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent-strong);
+      color: var(--accent-alt);
     }
 
     .brand-text span:last-child {
@@ -123,14 +125,13 @@
     }
 
     .nav-pill {
-      padding: 6px 10px;
+      padding: 6px 11px;
       border-radius: 999px;
-      border: 1px solid transparent;
-      cursor: default;
-      display: flex;
-      align-items: center;
+      background: rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: inline-flex;
       gap: 6px;
-      background: rgba(0,0,0,0.55);
+      align-items: center;
     }
 
     .nav-pill span.dot {
@@ -140,32 +141,33 @@
       background: var(--accent);
     }
 
-    /* TOP SECTION */
+    /* TOP */
 
     .top {
-      margin: 22px 2px 14px;
+      margin: 24px 2px 12px;
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
     .top h1 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 500;
+      letter-spacing: 0.02em;
     }
 
     .top p {
       font-size: 13px;
       color: var(--muted);
       max-width: 640px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .filters {
       margin-top: 6px;
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
       align-items: center;
     }
 
@@ -174,11 +176,11 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 7px 10px;
+      padding: 7px 11px;
       border-radius: 999px;
-      background: var(--bg-panel);
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.85);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.9);
       font-size: 11px;
     }
 
@@ -204,33 +206,33 @@
       background: transparent;
       color: var(--text);
       font-size: 11px;
-      min-width: 160px;
+      min-width: 180px;
     }
 
     .tag {
-      font-size: 9px;
-      padding: 6px 11px;
+      padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(26,159,255,0.4);
+      border: 1px solid rgba(0,170,255,0.4);
       background: var(--accent-soft);
       color: var(--accent-strong);
-      text-transform: uppercase;
+      font-size: 9px;
       letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     /* FEATURED */
 
     .featured {
-      margin-top: 14px;
-      margin-bottom: 10px;
+      margin-top: 16px;
+      margin-bottom: 12px;
     }
 
     .featured-box {
-      padding: 14px 14px 10px;
-      border-radius: var(--radius-lg);
-      background: var(--bg-card);
+      padding: 14px 16px 12px;
+      border-radius: var(--radius-xl);
+      background: var(--bg-card-soft);
       border: 1px solid var(--border);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -238,26 +240,26 @@
 
     .featured-box.empty {
       border-style: dashed;
+      opacity: 0.86;
       color: var(--muted);
-      opacity: 0.85;
     }
 
     .featured-label {
       font-size: 9px;
+      color: var(--accent-strong);
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--accent-strong);
     }
 
     .featured-title {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 500;
     }
 
     .featured-sub {
       font-size: 12px;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .featured-meta {
@@ -279,8 +281,8 @@
 
     .list-header strong {
       color: var(--accent-strong);
-      font-weight: 500;
       font-size: 11px;
+      font-weight: 500;
     }
 
     /* CARDS */
@@ -294,36 +296,36 @@
     .empty-state {
       font-size: 11px;
       color: var(--muted);
-      padding: 12px 12px;
-      border-radius: var(--radius-md);
-      border: 1px dashed rgba(255,255,255,0.22);
-      background: rgba(4,7,12,0.96);
+      padding: 12px 13px;
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(255,255,255,0.2);
+      background: #050811;
       margin-top: 4px;
     }
 
     .card {
-      padding: 12px 14px 10px;
-      border-radius: var(--radius-lg);
+      padding: 14px 16px 10px;
+      border-radius: var(--radius-xl);
       background: var(--bg-card);
       border: 1px solid var(--border);
-      box-shadow: 0 14px 36px rgba(0,0,0,0.9);
+      box-shadow: var(--shadow-soft);
       display: grid;
-      grid-template-columns: 1.7fr 1fr auto;
+      grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.4fr) auto;
       column-gap: 14px;
       row-gap: 6px;
       align-items: flex-start;
       cursor: pointer;
-      transition: all var(--tr-fast);
       position: relative;
+      transition: all var(--tr-fast);
     }
 
     .card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 20px 52px rgba(0,0,0,1);
+      box-shadow: var(--shadow-strong);
       transform: translateY(-2px);
+      border-color: var(--accent);
     }
 
-    .card-header-line {
+    .card-header {
       display: flex;
       gap: 8px;
       align-items: center;
@@ -336,23 +338,23 @@
       padding: 3px 8px;
       border-radius: 999px;
       font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
       background: var(--accent-soft);
       color: var(--accent-strong);
-      border: 1px solid rgba(26,159,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid rgba(0,170,255,0.55);
     }
 
     .badge-game {
-      font-size: 10px;
       color: var(--accent-strong);
+      font-size: 10px;
     }
 
     .badge-version {
-      font-size: 9px;
       padding: 3px 7px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 9px;
       color: var(--muted);
     }
 
@@ -362,16 +364,16 @@
     }
 
     .card-title {
-      font-size: 15px;
-      font-weight: 500;
       grid-column: 1 / 3;
+      font-size: 17px;
+      font-weight: 500;
     }
 
     .card-short {
+      grid-column: 1 / 3;
       font-size: 13px;
       color: var(--text);
-      line-height: 1.5;
-      grid-column: 1 / 3;
+      line-height: 1.6;
     }
 
     .card-tags {
@@ -383,28 +385,48 @@
     }
 
     .card-tag {
-      font-size: 9px;
       padding: 3px 7px;
       border-radius: 999px;
-      background: rgba(2,4,8,0.98);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(2,4,9,0.98);
       color: var(--muted);
+      font-size: 9px;
+      border: 1px solid rgba(255,255,255,0.16);
     }
 
-    .card-changelog {
-      grid-column: 1 / 4;
+    .card-admin-actions {
+      position: absolute;
+      top: 10px;
+      right: 12px;
       display: none;
-      margin-top: 4px;
-      padding-top: 6px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.6;
+      gap: 4px;
     }
 
-    .card-changelog ul {
-      margin-left: 16px;
-      margin-top: 4px;
+    .card.open .card-admin-actions {
+      top: 8px;
+    }
+
+    .card-edit-btn,
+    .card-del-btn {
+      padding: 3px 7px;
+      border-radius: 999px;
+      font-size: 8px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.8);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all var(--tr-fast);
+    }
+
+    .card-edit-btn:hover {
+      color: var(--accent-strong);
+      border-color: var(--accent-strong);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.9);
+    }
+
+    .card-del-btn:hover {
+      color: var(--danger);
+      border-color: var(--danger);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.9);
     }
 
     .card-arrow {
@@ -413,6 +435,30 @@
       align-self: flex-start;
       margin-top: 2px;
       transition: transform var(--tr-fast), color var(--tr-fast);
+    }
+
+    .card-changelog {
+      grid-column: 1 / 4;
+      display: none;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .card-changelog h1,
+    .card-changelog h2,
+    .card-changelog h3 {
+      margin: 6px 0 2px;
+      font-weight: 500;
+      color: var(--accent-strong);
+    }
+
+    .card-changelog ul {
+      margin-left: 18px;
+      margin-top: 4px;
     }
 
     .card.open .card-changelog {
@@ -430,55 +476,57 @@
       position: fixed;
       right: 18px;
       bottom: 18px;
-      padding: 9px 14px;
+      padding: 9px 15px;
       border-radius: 999px;
-      background: radial-gradient(circle at 0 0, rgba(85,198,255,0.9), #05070b);
-      border: 1px solid rgba(85,198,255,0.8);
+      background: radial-gradient(circle at 0 0, rgba(0,255,198,0.8), rgba(0,0,0,1));
+      border: 1px solid rgba(0,255,198,0.7);
       color: var(--text);
       font-size: 10px;
       display: flex;
       align-items: center;
       gap: 7px;
       cursor: pointer;
-      box-shadow: 0 18px 52px rgba(0,0,0,1);
+      box-shadow: 0 26px 80px rgba(0,0,0,1);
       z-index: 80;
       transition: all var(--tr-fast);
     }
 
     .admin-btn span.icon {
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .admin-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 26px 70px rgba(0,0,0,1);
+      box-shadow: 0 34px 96px rgba(0,0,0,1);
     }
 
-    /* MODALS */
+    /* BACKDROPS */
 
     .backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.78);
+      background: rgba(0,0,0,0.82);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 90;
     }
 
+    /* LOGIN MODAL */
+
     .modal-login {
       background: var(--bg-panel);
       padding: 16px 16px 12px;
       border-radius: var(--radius-lg);
-      box-shadow: 0 26px 80px rgba(0,0,0,1);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--shadow-strong);
       max-width: 360px;
       width: 100%;
       font-size: 11px;
     }
 
     .modal-login h2 {
-      font-size: 15px;
+      font-size: 16px;
       margin-bottom: 4px;
       font-weight: 500;
     }
@@ -501,7 +549,7 @@
       padding: 7px 8px;
       border-radius: 10px;
       border: 1px solid var(--border);
-      background: #05070c;
+      background: #02040a;
       color: var(--text);
       font-size: 11px;
       outline: none;
@@ -516,12 +564,12 @@
     }
 
     .btn {
-      padding: 6px 11px;
+      padding: 6px 12px;
       border-radius: 999px;
       border: none;
       font-size: 9px;
-      text-transform: uppercase;
       letter-spacing: 0.14em;
+      text-transform: uppercase;
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -530,10 +578,10 @@
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: linear-gradient(to right, var(--accent), var(--accent-alt));
       color: #020308;
       font-weight: 600;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.95);
+      box-shadow: 0 14px 32px rgba(0,0,0,1);
     }
 
     .btn-outline {
@@ -544,57 +592,65 @@
 
     .btn-danger {
       background: transparent;
-      color: #ff4a6a;
-      border: 1px solid rgba(255,74,106,0.6);
+      color: var(--danger);
+      border: 1px solid rgba(255,74,106,0.7);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(0,0,0,1);
+      box-shadow: 0 18px 44px rgba(0,0,0,1);
     }
 
-    /* ADMIN PANEL */
+    /* ADMIN PANEL 999V */
 
     .modal-admin {
-      background: var(--bg-panel);
-      padding: 14px;
-      border-radius: 20px;
-      box-shadow: 0 30px 88px rgba(0,0,0,1);
-      border: 1px solid rgba(85,198,255,0.32);
-      max-width: 980px;
-      width: 100%;
+      background: radial-gradient(circle at top left, rgba(0,170,255,0.18), transparent),
+                  var(--bg-panel);
+      padding: 16px;
+      border-radius: 26px;
+      border: 1px solid rgba(0,170,255,0.32);
+      box-shadow: var(--shadow-strong);
+      max-width: 1180px;
+      width: 96%;
       display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1.2fr);
-      gap: 14px;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 16px;
       font-size: 10px;
     }
 
-    .admin-headline {
+    .admin-header {
       display: flex;
       justify-content: space-between;
-      gap: 6px;
       align-items: baseline;
+      gap: 8px;
       margin-bottom: 6px;
     }
 
-    .admin-headline h2 {
-      font-size: 14px;
+    .admin-header h2 {
+      font-size: 15px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent-strong);
       font-weight: 500;
+      color: var(--accent-alt);
     }
 
-    .admin-headline span {
+    .admin-header span {
       font-size: 9px;
       color: var(--muted);
     }
 
-    .field-block {
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
       margin-bottom: 6px;
+    }
+
+    .field-block {
       display: flex;
       flex-direction: column;
       gap: 3px;
+      margin-bottom: 6px;
     }
 
     .field-label {
@@ -605,30 +661,90 @@
     }
 
     .field-input,
-    .field-select,
-    .field-textarea {
-      width: 100%;
+    .field-select {
       padding: 7px 8px;
       border-radius: 10px;
       border: 1px solid var(--border);
-      background: #05070c;
+      background: #02040a;
       color: var(--text);
       font-size: 10px;
       outline: none;
-      resize: vertical;
     }
 
-    .field-textarea {
-      min-height: 60px;
+    .editor-wrap {
+      background: #02040a;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 6px 6px 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    #fieldChangelog {
-      min-height: 140px; /* больше changelog */
-      line-height: 1.5;
+    .editor-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tool-btn {
+      padding: 3px 7px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 8px;
+      background: rgba(3,6,12,0.98);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all var(--tr-fast);
+    }
+
+    .tool-btn.active,
+    .tool-btn:hover {
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      box-shadow: 0 8px 18px rgba(0,0,0,1);
+    }
+
+    .editor-area {
+      margin-top: 2px;
+      padding: 6px;
+      min-height: 56px;
+      max-height: 220px;
+      overflow-y: auto;
+      font-size: 10px;
+      line-height: 1.6;
+      color: var(--text);
+      outline: none;
+      border-radius: 8px;
+    }
+
+    #editorChangelog {
+      min-height: 120px;
+    }
+
+    .toggle-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    .toggle-row label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .toggle-row input {
+      margin: 0;
+      cursor: pointer;
     }
 
     .admin-actions {
-      margin-top: 4px;
+      margin-top: 6px;
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
@@ -636,41 +752,40 @@
 
     /* PREVIEW */
 
-    .preview-label {
-      font-size: 8px;
-      padding: 3px 7px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .preview-card {
-      margin-top: 4px;
-      padding: 10px 11px 8px;
-      border-radius: var(--radius-lg);
+    .preview-box {
       background: var(--bg-card);
+      border-radius: 18px;
       border: 1px solid var(--border);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.9);
+      padding: 10px 10px 8px;
+      box-shadow: var(--shadow-soft);
       display: grid;
-      grid-template-columns: 1.7fr 1fr auto;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.2fr) auto;
       column-gap: 10px;
       row-gap: 4px;
       font-size: 9px;
     }
 
+    .preview-label {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      grid-column: 1 / 2;
+    }
+
     .preview-title {
+      grid-column: 1 / 3;
       font-size: 12px;
       font-weight: 500;
-      grid-column: 1 / 3;
     }
 
     .preview-short {
+      grid-column: 1 / 3;
       font-size: 10px;
       color: var(--text);
-      grid-column: 1 / 3;
     }
 
     .preview-date {
@@ -686,18 +801,17 @@
     .preview-date span {
       padding: 2px 6px;
       border-radius: 999px;
-      border: 1px solid rgba(26,159,255,0.4);
+      border: 1px solid rgba(0,170,255,0.42);
       color: var(--accent-strong);
       font-size: 7px;
-      text-transform: uppercase;
       letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     .preview-changelog {
       grid-column: 1 / 4;
       font-size: 9px;
       color: var(--muted);
-      margin-top: 4px;
       padding-top: 4px;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
@@ -709,27 +823,30 @@
       line-height: 1.5;
     }
 
-    /* RESPONSIVE */
-
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
       .modal-admin {
         grid-template-columns: 1fr;
-        max-height: 92vh;
+        width: 94%;
+        max-height: 94vh;
         overflow-y: auto;
       }
-      .preview-card,
+      .preview-box,
       .card {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(0, 1.7fr) auto;
       }
-      .card-header-line,
+      .card-header,
       .card-title,
       .card-short,
       .card-tags,
-      .card-changelog {
+      .card-changelog,
+      .preview-label,
+      .preview-title,
+      .preview-short,
+      .preview-changelog {
         grid-column: 1 / 3;
       }
     }
@@ -741,21 +858,21 @@
     <div class="brand">
       <div class="brand-logo">OX</div>
       <div class="brand-text">
-        <span>OXEALL STUDIOS CLNEWS</span>
-        <span>Официальная лента обновлений игр OXeall</span>
+        <span>OXEALL STUDIOS CLNEWS 999V</span>
+        <span>Официальный центр обновлений и патч-ноутов</span>
       </div>
     </div>
     <nav>
-      <div class="nav-pill"><span class="dot"></span>Обновления</div>
-      <div class="nav-pill">Только официальный контент</div>
+      <div class="nav-pill"><span class="dot"></span>Updates Feed</div>
+      <div class="nav-pill">Steam-inspired • Own Design</div>
     </nav>
   </header>
 
   <section class="top">
     <h1>Лента обновлений OXeall Studios</h1>
     <p>
-      Здесь публикуются официальные патч-ноуты, хотфиксы, крупные обновления, технические объявления и dev-логи
-      по всем проектам OXeall Studios. Структура и подача — в духе Steam News.
+      Все ключевые обновления, багфиксы, хотфиксы, крупные релизы и технические объявления по проектам OXeall
+      собраны в одном месте. Структура понятная, без лишнего шума.
     </p>
     <div class="filters">
       <div class="select">
@@ -773,33 +890,33 @@
 
   <section class="featured">
     <div class="featured-box empty" id="featuredBox">
-      <div class="featured-label">Закреплённое обновление не выбрано</div>
+      <div class="featured-label">Featured обновление не выбрано</div>
       <div class="featured-sub">
-        Любое обновление можно сделать <b>Featured</b> через панель разработчика — оно появится здесь
-        как главное официальное объявление.
+        Отметь любое обновление как <b>Featured</b> в панели разработчика — оно закрепится здесь
+        как главный официальный анонс.
       </div>
     </div>
   </section>
 
   <div class="list-header">
     <div><strong>Все обновления</strong></div>
-    <div>Клик по карточке — открыть / скрыть подробный changelog.</div>
+    <div>Клик по карточке — открыть подробный changelog. Админ может редактировать в один клик.</div>
   </div>
 
   <div id="emptyState" class="empty-state">
-    Пока нет опубликованных обновлений. Используй кнопку <b>Admin Update Panel</b> в правом нижнем углу,
-    чтобы добавить первое официальное объявление.
+    Ещё нет опубликованных обновлений. Открой <b>Admin Update Panel</b> снизу справа, создай первое объявление —
+    оно сразу появится здесь.
   </div>
 
   <section id="announcementList" class="announcements"></section>
 
   <footer style="margin-top:22px;font-size:9px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;border-top:1px solid rgba(255,255,255,0.06);padding-top:8px;">
-    <div>© <span id="year"></span> OXeall Studios. CLNEWS.</div>
-    <div>Страница на GitHub Pages. Управление контентом — через Admin Update Panel.</div>
+    <div>© <span id="year"></span> OXeall Studios. CLNEWS 999V.</div>
+    <div>Управление контентом — локальная Admin Update Panel. Публикуй только то, что считаешь официальным.</div>
   </footer>
 </div>
 
-<!-- Admin button -->
+<!-- Admin floating button -->
 <button class="admin-btn" id="adminBtn">
   <span class="icon">⚙️</span>
   <span>Admin Update Panel</span>
@@ -809,10 +926,10 @@
 <div class="backdrop" id="loginBackdrop">
   <div class="modal-login">
     <h2>Вход в панель разработчика</h2>
-    <p>Доступ только для OXeall Studios. Введите пароль для управления лентой обновлений.</p>
+    <p>Пароль только для OXeall Studios. Используется для локального управления лентой.</p>
     <label for="adminPassword">Пароль</label>
     <input type="password" id="adminPassword" placeholder="Введите пароль" />
-    <div id="loginError" style="display:none;color:#ff4a6a;font-size:8px;margin-bottom:4px;">Неверный пароль.</div>
+    <div id="loginError" style="display:none;color:var(--danger);font-size:8px;margin-bottom:4px;">Неверный пароль.</div>
     <div class="modal-actions">
       <button class="btn btn-outline" id="loginCancel">Отмена</button>
       <button class="btn btn-primary" id="loginSubmit">Войти</button>
@@ -820,14 +937,14 @@
   </div>
 </div>
 
-<!-- Admin panel modal -->
+<!-- Admin panel -->
 <div class="backdrop" id="adminBackdrop">
   <div class="modal-admin">
-    <!-- LEFT: FORM -->
+    <!-- LEFT: FORM + EDITORS -->
     <div>
-      <div class="admin-headline">
+      <div class="admin-header">
         <h2>Admin Update Panel</h2>
-        <span>Создание официальных обновлений в один шаг.</span>
+        <span>Создание и редактирование обновлений в стиле 999V.</span>
       </div>
 
       <div class="field-block">
@@ -835,8 +952,8 @@
         <input id="fieldGame" class="field-input" type="text" placeholder="Например: CityPort, Neon Arena..." />
       </div>
 
-      <div class="field-block" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:6px;">
-        <div>
+      <div class="field-row">
+        <div class="field-block">
           <div class="field-label">Тип обновления</div>
           <select id="fieldType" class="field-select">
             <option value="Major">Major Update</option>
@@ -847,11 +964,11 @@
             <option value="DevLog">DevLog</option>
           </select>
         </div>
-        <div>
+        <div class="field-block">
           <div class="field-label">Версия</div>
-          <input id="fieldVersion" class="field-input" type="text" placeholder="1.0.0 / 1.3.6f1..." />
+          <input id="fieldVersion" class="field-input" type="text" placeholder="1.2.1.0 / 1.3.6f1..." />
         </div>
-        <div>
+        <div class="field-block">
           <div class="field-label">Дата</div>
           <input id="fieldDate" class="field-input" type="date" />
         </div>
@@ -859,75 +976,93 @@
 
       <div class="field-block">
         <div class="field-label">Заголовок обновления</div>
-        <input id="fieldTitle" class="field-input" type="text" placeholder="Официальный заголовок, как в Steam" />
+        <input id="fieldTitle" class="field-input" type="text" placeholder="Крупный официальный заголовок, как в Steam News" />
       </div>
 
+      <!-- Overview editor -->
       <div class="field-block">
         <div class="field-label">Краткое описание (overview)</div>
-        <textarea id="fieldShort" class="field-textarea" placeholder="2–4 строки: что изменилось, для кого, ключевые моменты."></textarea>
+        <div class="editor-wrap" data-editor="overview">
+          <div class="editor-toolbar">
+            <button type="button" class="tool-btn" data-cmd="bold">B</button>
+            <button type="button" class="tool-btn" data-cmd="italic">I</button>
+            <button type="button" class="tool-btn" data-cmd="formatBlock" data-value="h3">H3</button>
+            <button type="button" class="tool-btn" data-cmd="insertUnorderedList">• List</button>
+          </div>
+          <div id="editorOverview" class="editor-area" contenteditable="true">
+Кратко опиши ключевые изменения, чтобы игрок за 1–2 строки понял суть.</div>
+        </div>
       </div>
 
+      <!-- Changelog editor -->
       <div class="field-block">
         <div class="field-label">Полный changelog</div>
-        <textarea id="fieldChangelog" class="field-textarea" placeholder="- Пункт 1
-- Пункт 2
-- Пункт 3"></textarea>
+        <div class="editor-wrap" data-editor="changelog">
+          <div class="editor-toolbar">
+            <button type="button" class="tool-btn" data-cmd="bold">B</button>
+            <button type="button" class="tool-btn" data-cmd="italic">I</button>
+            <button type="button" class="tool-btn" data-cmd="formatBlock" data-value="h3">H3</button>
+            <button type="button" class="tool-btn" data-cmd="insertUnorderedList">• List</button>
+            <button type="button" class="tool-btn" data-cmd="insertOrderedList">1. List</button>
+          </div>
+          <div id="editorChangelog" class="editor-area" contenteditable="true">
+- Добавь пункты изменений
+- Используй списки, заголовки и форматирование
+- Стиль как у официальных патч-ноутов</div>
+        </div>
       </div>
 
-      <div class="field-block" style="display:grid;grid-template-columns:1.6fr 1.4fr;gap:6px;">
-        <div>
-          <div class="field-label">Фоновое изображение (опционально, URL)</div>
-          <input id="fieldBg" class="field-input" type="text" placeholder="Картинка для карточки / баннера" />
+      <div class="field-row">
+        <div class="field-block">
+          <div class="field-label">Фон (URL, опционально)</div>
+          <input id="fieldBg" class="field-input" type="text" placeholder="Картинка баннера / карточки" />
         </div>
-        <div>
+        <div class="field-block">
           <div class="field-label">Теги (через запятую)</div>
           <input id="fieldTags" class="field-input" type="text" placeholder="CityPort, Patch, Balance..." />
         </div>
+        <div class="field-block">
+          <div class="field-label">ID (для редактирования)</div>
+          <input id="fieldId" class="field-input" type="text" placeholder="Генерируется автоматически" disabled />
+        </div>
       </div>
 
-      <div class="field-block" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-        <label style="font-size:9px;color:var(--muted);display:flex;align-items:center;gap:4px;cursor:pointer;">
-          <input type="checkbox" id="fieldFeatured" style="margin:0;" />
-          Сделать это обновление Featured (верхний баннер)
-        </label>
-        <label style="font-size:9px;color:var(--muted);display:flex;align-items:center;gap:4px;cursor:pointer;">
-          <input type="checkbox" id="fieldPin" style="margin:0;" />
-          Закрепить вверху списка
-        </label>
+      <div class="toggle-row">
+        <label><input type="checkbox" id="fieldFeatured" /> Сделать Featured (главный баннер)</label>
+        <label><input type="checkbox" id="fieldPin" /> Закрепить вверху ленты</label>
       </div>
 
       <div class="admin-actions">
-        <button class="btn btn-primary" id="btnAddUpdate">Опубликовать обновление</button>
-        <button class="btn btn-outline" id="btnClearForm">Очистить форму</button>
-        <button class="btn btn-danger" id="btnClearLocal">Сбросить локальные обновления</button>
+        <button class="btn btn-primary" id="btnSaveUpdate">Сохранить / Обновить</button>
+        <button class="btn btn-outline" id="btnNew">Новый пост</button>
+        <button class="btn btn-danger" id="btnClearLocal">Сбросить локальные посты</button>
         <button class="btn btn-outline" id="btnClosePanel">Закрыть панель</button>
       </div>
 
       <div class="admin-note">
-        Обновления сохраняются в этом браузере (localStorage), чтобы тебе было удобно редактировать структуру.
-        Если захочешь, позже можно вынести их в статичный HTML или JSON для всех.
+        Все изменения сохраняются в <b>localStorage</b> этого браузера. Редактируй посты в панели или по кнопке
+        «Edit» на карточке. Если захочешь сделать глобально для всех — перенеси сгенерированные данные в статический код.
       </div>
     </div>
 
     <!-- RIGHT: PREVIEW -->
     <div>
-      <div class="admin-headline">
-        <h2>Предпросмотр</h2>
-        <span>Так игроки увидят объявление на сайте.</span>
+      <div class="admin-header">
+        <h2>Live Preview</h2>
+        <span>Карточка как в реальной ленте CLNEWS 999V.</span>
       </div>
-
-      <div>
+      <div class="preview-box">
         <div class="preview-label" id="previewType">MAJOR UPDATE</div>
-        <div class="preview-card">
-          <div class="preview-title" id="previewTitle">Заголовок обновления</div>
-          <div class="preview-short" id="previewShort">Краткое официальное описание появится здесь.</div>
-          <div class="preview-date">
-            <div id="previewGame">Проект</div>
-            <span id="previewVersion">vX.X.X</span>
-          </div>
-          <div class="preview-changelog" id="previewChangelog">
-            Список изменений (changelog) будет отображён в структурированном виде.
-          </div>
+        <div class="preview-title" id="previewTitle">Заголовок обновления</div>
+        <div class="preview-short" id="previewShort">
+          Краткое официальное описание обновления будет отображаться здесь более крупным текстом.
+        </div>
+        <div class="preview-date">
+          <div id="previewGame">OXeall Project</div>
+          <span id="previewVersion">vX.X.X</span>
+        </div>
+        <div class="preview-changelog" id="previewChangelog">
+          Полный changelog в формате списков и заголовков появится здесь.
         </div>
       </div>
     </div>
@@ -936,22 +1071,22 @@
 
 <script>
   const ADMIN_PASSWORD = "OXS11993384756281";
-  const STORAGE_KEY = "oxeall_clnews_updates_v2";
+  const STORAGE_KEY = "oxeall_clnews_999v_updates";
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
   let isAdmin = false;
   let updates = [];
+  let editingId = null; // если редактируем существующий пост
 
-  /* Utils */
+  /* ---------- Utils ---------- */
 
   function formatDate(str) {
     if (!str) return "";
     const d = new Date(str);
     if (isNaN(d)) return str;
-    const months = ["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
-    const dd = String(d.getDate()).padStart(2, "0");
-    return `${dd} ${months[d.getMonth()]} ${d.getFullYear()}`;
+    const m = ["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
+    return String(d.getDate()).padStart(2,"0") + " " + m[d.getMonth()] + " " + d.getFullYear();
   }
 
   function typeLabel(t) {
@@ -966,20 +1101,12 @@
     }
   }
 
-  function changelogToHtml(text) {
-    if (!text) return "";
-    const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
-    if (!lines.length) return "";
-    if (lines.every(l => l.startsWith("-") || l.startsWith("•"))) {
-      return "<ul>" + lines.map(l => "<li>" + l.replace(/^(-|•)\s*/, "") + "</li>").join("") + "</ul>";
-    }
-    return text.replace(/\n/g, "<br>");
+  function genId() {
+    return "upd-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2,8);
   }
 
   function saveLocal() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updates));
-    } catch (e) {}
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(updates)); } catch(e){}
   }
 
   function loadLocal() {
@@ -988,8 +1115,10 @@
       if (!raw) return;
       const data = JSON.parse(raw);
       if (Array.isArray(data)) updates = data;
-    } catch (e) {}
+    } catch(e){}
   }
+
+  /* ---------- Render ---------- */
 
   function renderFeatured() {
     const box = document.getElementById("featuredBox");
@@ -998,22 +1127,25 @@
       box.classList.add("empty");
       box.style.backgroundImage = "none";
       box.innerHTML = `
-        <div class="featured-label">Закреплённое обновление не выбрано</div>
+        <div class="featured-label">Featured обновление не выбрано</div>
         <div class="featured-sub">
-          Отметь любое обновление как <b>Featured</b> в Admin Update Panel — оно появится здесь как главный баннер.
+          Отметь любое обновление как <b>Featured</b> в панели — оно закрепится здесь как главный анонс.
         </div>`;
       return;
     }
     box.classList.remove("empty");
-    box.style.backgroundImage = feat.background
-      ? `linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.98)), url('${feat.background}')`
-      : "none";
-    box.style.backgroundSize = feat.background ? "cover" : "";
-    box.style.backgroundPosition = feat.background ? "center" : "";
+    if (feat.background) {
+      box.style.backgroundImage =
+        `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.98)), url('${feat.background}')`;
+      box.style.backgroundSize = "cover";
+      box.style.backgroundPosition = "center";
+    } else {
+      box.style.backgroundImage = "none";
+    }
     box.innerHTML = `
       <div class="featured-label">${typeLabel(feat.type)} • ${feat.game}</div>
       <div class="featured-title">${feat.title}</div>
-      <div class="featured-sub">${feat.short || ""}</div>
+      <div class="featured-sub">${feat.overview || ""}</div>
       <div class="featured-meta">
         ${formatDate(feat.date)} · Версия: ${feat.version || "—"}
         ${feat.tags && feat.tags.length ? " · " + feat.tags.join(", ") : ""}
@@ -1032,88 +1164,101 @@
     }
     empty.style.display = "none";
 
-    // сортировка: pin -> дата (новее выше)
+    // sort: pinned first, then by date desc
     updates.sort((a,b) => {
       if (a.pin && !b.pin) return -1;
       if (!a.pin && b.pin) return 1;
-      const da = new Date(a.date || 0).getTime();
-      const db = new Date(b.date || 0).getTime();
-      return db - da;
+      return (new Date(b.date||0)) - (new Date(a.date||0));
     });
 
-    updates.forEach((u, idx) => {
+    updates.forEach(u => {
       const card = document.createElement("article");
       card.className = "card";
+      card.dataset.id = u.id;
       card.dataset.game = u.game || "";
-      card.dataset.search = (u.title + " " + (u.short||"") + " " + (u.changelog||"") + " " + (u.tags||[]).join(" ")).toLowerCase();
+      card.dataset.search = (
+        (u.title||"") + " " +
+        (u.overview||"") + " " +
+        (u.changelog||"") + " " +
+        (u.tags||[]).join(" ")
+      ).toLowerCase();
 
-      const headerLine = document.createElement("div");
-      headerLine.className = "card-header-line";
+      if (u.background) {
+        card.style.backgroundImage =
+          `linear-gradient(to bottom, rgba(0,0,0,0.70), rgba(0,0,0,0.98)), url('${u.background}')`;
+        card.style.backgroundSize = "cover";
+        card.style.backgroundPosition = "center";
+      }
 
-      const typeSpan = document.createElement("div");
-      typeSpan.className = "badge-type";
-      typeSpan.textContent = typeLabel(u.type);
+      const header = document.createElement("div");
+      header.className = "card-header";
+      header.innerHTML = `
+        <div class="badge-type">${typeLabel(u.type)}</div>
+        <div class="badge-game">${u.game || "OXeall Project"}</div>
+        <div class="badge-version">${u.version ? "v"+u.version : "Без версии"}</div>
+        <div class="badge-date">${formatDate(u.date)}</div>
+      `;
 
-      const gameSpan = document.createElement("div");
-      gameSpan.className = "badge-game";
-      gameSpan.textContent = u.game || "OXeall Project";
+      const title = document.createElement("div");
+      title.className = "card-title";
+      title.textContent = u.title || "Без названия";
 
-      const verSpan = document.createElement("div");
-      verSpan.className = "badge-version";
-      verSpan.textContent = u.version ? "v" + u.version : "без версии";
-
-      const dateSpan = document.createElement("div");
-      dateSpan.className = "badge-date";
-      dateSpan.textContent = formatDate(u.date);
-
-      headerLine.appendChild(typeSpan);
-      headerLine.appendChild(gameSpan);
-      headerLine.appendChild(verSpan);
-      headerLine.appendChild(dateSpan);
-
-      const titleDiv = document.createElement("div");
-      titleDiv.className = "card-title";
-      titleDiv.textContent = u.title || "Без названия";
-
-      const shortDiv = document.createElement("div");
-      shortDiv.className = "card-short";
-      shortDiv.textContent = u.short || "";
+      const short = document.createElement("div");
+      short.className = "card-short";
+      short.innerHTML = u.overview || "";
 
       const tagsDiv = document.createElement("div");
       tagsDiv.className = "card-tags";
       (u.tags || []).forEach(t => {
-        const el = document.createElement("div");
-        el.className = "card-tag";
-        el.textContent = t;
-        tagsDiv.appendChild(el);
+        const span = document.createElement("div");
+        span.className = "card-tag";
+        span.textContent = t;
+        tagsDiv.appendChild(span);
       });
 
       const arrow = document.createElement("div");
       arrow.className = "card-arrow";
       arrow.textContent = "▼";
 
-      const changelogDiv = document.createElement("div");
-      changelogDiv.className = "card-changelog";
-      changelogDiv.innerHTML = changelogToHtml(u.changelog || "");
+      const changelog = document.createElement("div");
+      changelog.className = "card-changelog";
+      changelog.innerHTML = u.changelog || "";
 
-      if (u.background) {
-        card.style.backgroundImage =
-          `linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.98)), url('${u.background}')`;
-        card.style.backgroundSize = "cover";
-        card.style.backgroundPosition = "center";
-      }
+      const adminActions = document.createElement("div");
+      adminActions.className = "card-admin-actions";
+      adminActions.innerHTML = `
+        <button class="card-edit-btn">Edit</button>
+        <button class="card-del-btn">Del</button>
+      `;
+      card.appendChild(adminActions);
 
-      card.appendChild(headerLine);
-      card.appendChild(titleDiv);
-      if (u.short) card.appendChild(shortDiv);
+      if (u.overview) card.appendChild(header); else card.appendChild(header);
+      card.appendChild(title);
+      if (u.overview) card.appendChild(short);
       if (u.tags && u.tags.length) card.appendChild(tagsDiv);
       card.appendChild(arrow);
-      if (u.changelog) card.appendChild(changelogDiv);
+      if (u.changelog) card.appendChild(changelog);
 
-      card.addEventListener("click", (e) => {
+      card.addEventListener("click", e => {
+        if (e.target.closest(".card-edit-btn") || e.target.closest(".card-del-btn")) return;
         if (e.target.tagName === "A" || e.target.closest("a")) return;
         card.classList.toggle("open");
       });
+
+      if (isAdmin) {
+        adminActions.style.display = "flex";
+        adminActions.querySelector(".card-edit-btn").addEventListener("click", (e) => {
+          e.stopPropagation();
+          loadUpdateToForm(u.id);
+        });
+        adminActions.querySelector(".card-del-btn").addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (!confirm("Удалить это обновление из локального списка?")) return;
+          updates = updates.filter(x => x.id !== u.id);
+          saveLocal();
+          renderUpdates();
+        });
+      }
 
       list.appendChild(card);
     });
@@ -1123,43 +1268,34 @@
   }
 
   function attachFilters() {
-    const gameSelect = document.getElementById("gameFilter");
-    const searchInput = document.getElementById("searchInput");
+    const select = document.getElementById("gameFilter");
+    const search = document.getElementById("searchInput");
     const cards = Array.from(document.querySelectorAll(".card"));
 
-    // заполнить список игр
     const games = Array.from(new Set(updates.map(u => u.game).filter(Boolean)));
-    gameSelect.innerHTML = '<option value="all">Все проекты</option>' +
+    select.innerHTML = '<option value="all">Все проекты</option>' +
       games.map(g => `<option value="${g}">${g}</option>`).join("");
 
     function apply() {
-      const g = gameSelect.value;
-      const q = (searchInput.value || "").toLowerCase().trim();
-
+      const g = select.value;
+      const q = (search.value || "").toLowerCase().trim();
       cards.forEach(c => {
-        const matchGame = (g === "all") || (c.dataset.game === g);
-        const matchSearch = !q || c.dataset.search.includes(q);
-        c.style.display = (matchGame && matchSearch) ? "" : "none";
+        const mg = (g === "all") || (c.dataset.game === g);
+        const ms = !q || c.dataset.search.includes(q);
+        c.style.display = (mg && ms) ? "" : "none";
       });
     }
 
-    gameSelect.onchange = apply;
-    searchInput.oninput = apply;
+    select.onchange = apply;
+    search.oninput = apply;
     apply();
   }
 
-  /* Load initial */
-
-  loadLocal();
-  renderUpdates();
-
-  /* Admin button + login */
+  /* ---------- Admin: login ---------- */
 
   const adminBtn = document.getElementById("adminBtn");
   const loginBackdrop = document.getElementById("loginBackdrop");
   const adminBackdrop = document.getElementById("adminBackdrop");
-  const loginCancel = document.getElementById("loginCancel");
-  const loginSubmit = document.getElementById("loginSubmit");
   const loginInput = document.getElementById("adminPassword");
   const loginError = document.getElementById("loginError");
 
@@ -1174,31 +1310,30 @@
     loginInput.focus();
   });
 
-  loginCancel.addEventListener("click", () => {
+  document.getElementById("loginCancel").addEventListener("click", () => {
     loginBackdrop.style.display = "none";
   });
 
-  loginSubmit.addEventListener("click", () => {
-    const val = loginInput.value.trim();
-    if (val === ADMIN_PASSWORD) {
+  document.getElementById("loginSubmit").addEventListener("click", () => {
+    if (loginInput.value === ADMIN_PASSWORD) {
       isAdmin = true;
       loginBackdrop.style.display = "none";
       adminBackdrop.style.display = "flex";
-      loginError.style.display = "none";
+      renderUpdates(); // чтобы показать edit-кнопки
     } else {
       loginError.style.display = "block";
     }
   });
 
-  loginInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") loginSubmit.click();
+  loginInput.addEventListener("keydown", e => {
+    if (e.key === "Enter") document.getElementById("loginSubmit").click();
   });
 
-  // Закрытие модалок по клику вне
-  loginBackdrop.addEventListener("click", (e) => {
+  loginBackdrop.addEventListener("click", e => {
     if (e.target === loginBackdrop) loginBackdrop.style.display = "none";
   });
-  adminBackdrop.addEventListener("click", (e) => {
+
+  adminBackdrop.addEventListener("click", e => {
     if (e.target === adminBackdrop) adminBackdrop.style.display = "none";
   });
 
@@ -1206,19 +1341,42 @@
     adminBackdrop.style.display = "none";
   });
 
-  /* Admin form + preview */
+  /* ---------- Admin: editors ---------- */
+
+  let activeEditor = null;
+
+  function bindEditorToolbar(wrapper) {
+    const area = wrapper.querySelector(".editor-area");
+    const buttons = wrapper.querySelectorAll(".tool-btn");
+    area.addEventListener("focus", () => { activeEditor = area; });
+    area.addEventListener("click", () => { activeEditor = area; });
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (!activeEditor) activeEditor = area;
+        activeEditor.focus();
+        const cmd = btn.dataset.cmd;
+        const val = btn.dataset.value || null;
+        document.execCommand(cmd, false, val);
+      });
+    });
+  }
+
+  document.querySelectorAll(".editor-wrap").forEach(bindEditorToolbar);
+
+  /* ---------- Admin: form & preview ---------- */
 
   const fieldGame = document.getElementById("fieldGame");
   const fieldType = document.getElementById("fieldType");
   const fieldVersion = document.getElementById("fieldVersion");
   const fieldDate = document.getElementById("fieldDate");
   const fieldTitle = document.getElementById("fieldTitle");
-  const fieldShort = document.getElementById("fieldShort");
-  const fieldChangelog = document.getElementById("fieldChangelog");
   const fieldBg = document.getElementById("fieldBg");
   const fieldTags = document.getElementById("fieldTags");
+  const fieldId = document.getElementById("fieldId");
   const fieldFeatured = document.getElementById("fieldFeatured");
   const fieldPin = document.getElementById("fieldPin");
+  const editorOverview = document.getElementById("editorOverview");
+  const editorChangelog = document.getElementById("editorChangelog");
 
   const previewType = document.getElementById("previewType");
   const previewTitle = document.getElementById("previewTitle");
@@ -1230,57 +1388,63 @@
   function updatePreview() {
     previewType.textContent = typeLabel(fieldType.value);
     previewTitle.textContent = fieldTitle.value || "Заголовок обновления";
-    previewShort.textContent = fieldShort.value || "Краткое официальное описание обновления.";
-    previewGame.textContent = fieldGame.value || "Проект";
-    previewVersion.textContent = fieldVersion.value ? "v" + fieldVersion.value : "vX.X.X";
-
-    const cl = fieldChangelog.value.trim();
-    previewChangelog.innerHTML = cl
-      ? changelogToHtml(cl)
-      : "Список изменений (changelog) будет отображён здесь в структурированном виде.";
-
+    previewShort.innerHTML = editorOverview.innerHTML || "Краткое официальное описание обновления.";
+    previewGame.textContent = fieldGame.value || "OXeall Project";
+    previewVersion.textContent = fieldVersion.value ? "v"+fieldVersion.value : "vX.X.X";
+    previewChangelog.innerHTML = editorChangelog.innerHTML || "Changelog будет отображён здесь.";
   }
 
   [
     fieldGame, fieldType, fieldVersion, fieldDate, fieldTitle,
-    fieldShort, fieldChangelog, fieldBg, fieldTags,
-    fieldFeatured, fieldPin
+    fieldBg, fieldTags, fieldFeatured, fieldPin
   ].forEach(el => el.addEventListener("input", updatePreview));
+
+  editorOverview.addEventListener("input", updatePreview);
+  editorChangelog.addEventListener("input", updatePreview);
 
   updatePreview();
 
-  document.getElementById("btnClearForm").addEventListener("click", () => {
+  function resetForm() {
+    editingId = null;
     fieldGame.value = "";
     fieldType.value = "Major";
     fieldVersion.value = "";
     fieldDate.value = "";
     fieldTitle.value = "";
-    fieldShort.value = "";
-    fieldChangelog.value = "";
     fieldBg.value = "";
     fieldTags.value = "";
     fieldFeatured.checked = false;
     fieldPin.checked = false;
+    fieldId.value = "";
+    editorOverview.innerHTML = "Кратко опиши ключевые изменения, чтобы игрок за 1–2 строки понял суть.";
+    editorChangelog.innerHTML = "- Добавь пункты изменений<br>- Используй списки, заголовки и форматирование<br>- Стиль как у официальных патч-ноутов";
     updatePreview();
+  }
+
+  document.getElementById("btnNew").addEventListener("click", () => {
+    resetForm();
   });
 
   document.getElementById("btnClearLocal").addEventListener("click", () => {
-    if (!confirm("Точно удалить все локально сохранённые обновления?")) return;
-    localStorage.removeItem(STORAGE_KEY);
+    if (!confirm("Удалить все локально сохранённые обновления?")) return;
     updates = [];
+    saveLocal();
     renderUpdates();
+    resetForm();
   });
 
-  document.getElementById("btnAddUpdate").addEventListener("click", () => {
+  document.getElementById("btnSaveUpdate").addEventListener("click", () => {
+    const id = editingId || genId();
     const nowISO = new Date().toISOString().slice(0,10);
     const upd = {
-      game: (fieldGame.value || "OXeall Project").trim(),
+      id,
+      game: fieldGame.value.trim() || "OXeall Project",
       type: fieldType.value,
       version: fieldVersion.value.trim(),
       date: fieldDate.value || nowISO,
       title: fieldTitle.value.trim() || "Без названия",
-      short: fieldShort.value.trim(),
-      changelog: fieldChangelog.value.trim(),
+      overview: editorOverview.innerHTML.trim(),
+      changelog: editorChangelog.innerHTML.trim(),
       background: fieldBg.value.trim(),
       tags: (fieldTags.value || "").split(",").map(t => t.trim()).filter(Boolean),
       featured: fieldFeatured.checked,
@@ -1291,11 +1455,45 @@
       updates.forEach(u => u.featured = false);
     }
 
-    updates.unshift(upd);
+    const idx = updates.findIndex(u => u.id === id);
+    if (idx >= 0) {
+      updates[idx] = upd;
+    } else {
+      updates.unshift(upd);
+    }
+
+    editingId = id;
+    fieldId.value = id;
+
     saveLocal();
     renderUpdates();
-    alert("Обновление добавлено в ленту (сохранено локально в этом браузере).");
+    alert("Обновление сохранено локально и отображено в ленте.");
   });
+
+  function loadUpdateToForm(id) {
+    const upd = updates.find(u => u.id === id);
+    if (!upd) return;
+    editingId = upd.id;
+    fieldId.value = upd.id;
+    fieldGame.value = upd.game || "";
+    fieldType.value = upd.type || "Major";
+    fieldVersion.value = upd.version || "";
+    fieldDate.value = upd.date || "";
+    fieldTitle.value = upd.title || "";
+    editorOverview.innerHTML = upd.overview || "";
+    editorChangelog.innerHTML = upd.changelog || "";
+    fieldBg.value = upd.background || "";
+    fieldTags.value = (upd.tags || []).join(", ");
+    fieldFeatured.checked = !!upd.featured;
+    fieldPin.checked = !!upd.pin;
+    updatePreview();
+    adminBackdrop.style.display = "flex";
+  }
+
+  /* ---------- Init ---------- */
+
+  loadLocal();
+  renderUpdates();
 </script>
 </body>
 </html>
