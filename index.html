@@ -8,29 +8,25 @@
   <style>
     :root {
       --bg: #02040a;
-      --bg-gradient: radial-gradient(circle at top, rgba(0,180,255,0.12), transparent 65%);
       --bg-card: #070b13;
       --bg-card-soft: #0b101a;
       --accent: #00aaff;
-      --accent-soft: rgba(0,170,255,0.16);
       --accent-strong: #35c3ff;
       --accent-alt: #00ffc6;
       --text: #f5f7ff;
       --muted: #9aa7c5;
       --border: #202838;
       --radius-xl: 22px;
-      --radius-lg: 18px;
       --shadow-soft: 0 18px 52px rgba(0,0,0,0.9);
       --shadow-strong: 0 26px 90px rgba(0,0,0,0.98);
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --tr-fast: 0.18s ease-out;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: var(--font-main);
-      background: var(--bg-gradient), var(--bg);
+      background: radial-gradient(circle at top, rgba(0,180,255,0.12), transparent 65%), var(--bg);
       color: var(--text);
       min-height: 100vh;
     }
@@ -41,15 +37,10 @@
       padding: 22px 18px 40px;
     }
 
-    a { color: var(--accent-strong); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* HEADER */
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      align-items: center;
       padding: 14px 18px;
       border-radius: var(--radius-xl);
       background: linear-gradient(135deg, rgba(0,170,255,0.16), rgba(2,4,10,0.98));
@@ -57,12 +48,10 @@
       box-shadow: var(--shadow-soft);
       position: sticky;
       top: 10px;
-      z-index: 40;
       backdrop-filter: blur(16px);
     }
 
     .brand { display: flex; align-items: center; gap: 12px; }
-
     .brand-logo {
       width: 40px; height: 40px;
       border-radius: 12px;
@@ -71,59 +60,10 @@
       font-weight: 800; font-size: 20px; color: #020308;
       box-shadow: 0 12px 26px rgba(0,0,0,0.98);
     }
-
     .brand-text { display: flex; flex-direction: column; gap: 2px; }
-    .brand-text span:first-child {
-      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-alt);
-    }
+    .brand-text span:first-child { font-size: 11px; color: var(--accent-alt); text-transform: uppercase; }
     .brand-text span:last-child { font-size: 12px; color: var(--muted); }
 
-    nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; font-size: 10px; color: var(--muted); }
-
-    .nav-pill {
-      padding: 6px 11px; border-radius: 999px;
-      background: rgba(0,0,0,0.78);
-      border: 1px solid rgba(255,255,255,0.09);
-      display: inline-flex; gap: 6px; align-items: center;
-    }
-    .nav-pill span.dot { width: 6px; height: 6px; border-radius: 999px; background: var(--accent); }
-
-    /* TOP */
-    .top { margin: 24px 2px 12px; display: flex; flex-direction: column; gap: 8px; }
-    .top h1 { font-size: 26px; font-weight: 500; letter-spacing: 0.02em; }
-    .top p { font-size: 13px; color: var(--muted); max-width: 640px; line-height: 1.6; }
-
-    .filters {
-      margin-top: 6px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
-    }
-
-    .select, .search {
-      display: flex; align-items: center; gap: 8px; padding: 7px 11px;
-      border-radius: 999px; background: var(--bg-card-soft);
-      border: 1px solid var(--border);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.9);
-      font-size: 11px;
-    }
-
-    .select label {
-      font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted);
-    }
-
-    .select select {
-      border: none; background: transparent; color: var(--text); font-size: 11px; outline: none; cursor: pointer;
-    }
-
-    .search input {
-      border: none; outline: none; background: transparent; color: var(--text); font-size: 11px; min-width: 180px;
-    }
-
-    .tag {
-      padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(0,170,255,0.35);
-      background: var(--accent-soft); color: var(--accent-strong);
-      font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
-    }
-
-    /* CARDS */
     .announcements { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
 
     .card {
@@ -132,55 +72,41 @@
       background: var(--bg-card);
       border: 1px solid rgba(0,170,255,0.13);
       box-shadow: var(--shadow-soft);
-      display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(0, 1.4fr) auto;
-      column-gap: 14px; row-gap: 6px; align-items: flex-start;
-      position: relative; cursor: pointer; transition: all var(--tr-fast);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.2s;
     }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-strong); }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-strong);
-      border-color: rgba(0,170,255,0.45);
-    }
-
-    .card-header { display: flex; gap: 8px; align-items: center; font-size: 10px; color: var(--muted); grid-column: 1 / 3; }
+    .card-header { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 
     .badge-type {
-      padding: 4px 12px 3px; border-radius: 999px; font-size: 8px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.12);
-      text-shadow: 0 0 6px rgba(0,0,0,0.9); box-shadow: 0 0 12px rgba(0,0,0,0.9) inset; color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
     }
 
-    /* === Цвета типов === */
-    .badge-type.major {
-      background: linear-gradient(to right, #3b82f6, #1e3a8a);
-      color: white;
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-    }
-    .badge-type.minor {
-      background: linear-gradient(to right, #facc15, #a16207);
-      color: black;
-      box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
-    }
-    .badge-type.patch {
-      background: linear-gradient(to right, #22c55e, #065f46);
-      color: white;
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
-    }
-    .badge-type.hotfix {
-      background: linear-gradient(to right, #ef4444, #7f1d1d);
-      color: white;
-      box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
-    }
+    /* Цвета для каждого типа */
+    .major { background: linear-gradient(to right, #3b82f6, #1e3a8a); }
+    .minor { background: linear-gradient(to right, #facc15, #a16207); color: black; }
+    .patch { background: linear-gradient(to right, #22c55e, #065f46); }
+    .hotfix { background: linear-gradient(to right, #ef4444, #7f1d1d); }
 
-    .badge-game { color: var(--accent-strong); font-size: 10px; }
-    .badge-version { padding: 3px 7px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); font-size: 9px; color: var(--muted); }
-    .badge-date { font-size: 9px; color: var(--muted); }
+    .badge-game { font-size: 10px; color: var(--accent-strong); }
+    .badge-version, .badge-date { font-size: 9px; color: var(--muted); }
 
-    .card-title { grid-column: 1 / 3; font-size: 17px; font-weight: 500; }
-    .card-short { grid-column: 1 / 3; font-size: 13px; line-height: 1.7; color: var(--text); }
+    .card-title { font-size: 17px; font-weight: 500; }
+    .card-short { font-size: 13px; color: var(--text); line-height: 1.6; }
+    .card-changelog { display: none; font-size: 12px; color: var(--muted); margin-top: 6px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; white-space: pre-line; }
+    .card.open .card-changelog { display: block; }
+    .card-arrow { font-size: 10px; color: var(--muted); }
 
-    footer { margin-top:22px; font-size:9px; color:var(--muted); display:flex; justify-content:space-between; gap:8px; border-top:1px solid rgba(255,255,255,0.06); padding-top:8px; }
+    footer { margin-top: 20px; font-size: 10px; color: var(--muted); text-align: center; }
   </style>
 </head>
 <body>
@@ -190,80 +116,78 @@
       <div class="brand-logo">OX</div>
       <div class="brand-text">
         <span>OXeall Studios — Games Changelog</span>
-        <span>Официальная лента обновлений OXeall Studios</span>
+        <span>Официальная лента обновлений</span>
       </div>
     </div>
-    <nav>
-      <div class="nav-pill"><span class="dot"></span>Official Updates Feed</div>
-      <div class="nav-pill">Steam-inspired • OXeall Design</div>
-    </nav>
   </header>
 
-  <section class="top">
-    <h1>Лента обновлений OXeall Studios</h1>
-    <p>Все Major, Minor, Patch и Hotfix обновления студии — в одном месте.</p>
-  </section>
-
-  <section class="announcements">
-
-    <!-- 🟦 MAJOR -->
-    <article class="card" data-game="City DayX 2" data-type="Major">
+  <section class="announcements" id="announcementList">
+    <!-- 🔹 Примеры карточек -->
+    <article class="card" data-type="Major">
       <div class="card-header">
         <div class="badge-type major">MAJOR</div>
         <div class="badge-game">City DayX 2</div>
         <div class="badge-version">v1.3.0.0</div>
-        <div class="badge-date">09 ноя 2025</div>
+        <div class="badge-date">10 ноя 2025</div>
       </div>
-      <div class="card-title">Major Update</div>
-      <div class="card-short">Глобальное обновление контента, движка и производительности.</div>
+      <div class="card-title">Global Update</div>
+      <div class="card-short">Глобальное обновление — переработка движка и интерфейса.</div>
+      <div class="card-arrow">▼</div>
+      <div class="card-changelog">- Новый UI\n- Повышена производительность\n- Добавлены города</div>
     </article>
 
-    <!-- 🟨 MINOR -->
-    <article class="card" data-game="City DayX 2" data-type="Minor">
+    <article class="card" data-type="Minor">
       <div class="card-header">
         <div class="badge-type minor">MINOR</div>
         <div class="badge-game">City DayX 2</div>
         <div class="badge-version">v1.3.1.0</div>
-        <div class="badge-date">09 ноя 2025</div>
+        <div class="badge-date">11 ноя 2025</div>
       </div>
-      <div class="card-title">Minor Update</div>
-      <div class="card-short">Небольшие улучшения UI и баланс правок.</div>
+      <div class="card-title">Minor Fixes</div>
+      <div class="card-short">Исправлены мелкие баги и улучшен баланс.</div>
+      <div class="card-arrow">▼</div>
+      <div class="card-changelog">- Фикс карты\n- Оптимизация освещения</div>
     </article>
 
-    <!-- 🟩 PATCH -->
-    <article class="card" data-game="City DayX 2" data-type="Patch">
+    <article class="card" data-type="Patch">
       <div class="card-header">
         <div class="badge-type patch">PATCH</div>
         <div class="badge-game">City DayX 2</div>
         <div class="badge-version">v1.3.2.0</div>
-        <div class="badge-date">10 ноя 2025</div>
+        <div class="badge-date">12 ноя 2025</div>
       </div>
       <div class="card-title">Patch Update</div>
-      <div class="card-short">Исправлены баги и улучшена оптимизация.</div>
+      <div class="card-short">Небольшие технические исправления и доработка сетевого режима.</div>
+      <div class="card-arrow">▼</div>
+      <div class="card-changelog">- Исправлены вылеты при подключении\n- Улучшено сохранение</div>
     </article>
 
-    <!-- 🟥 HOTFIX -->
-    <article class="card" data-game="City DayX 2" data-type="Hotfix">
+    <article class="card" data-type="Hotfix">
       <div class="card-header">
         <div class="badge-type hotfix">HOTFIX</div>
         <div class="badge-game">City DayX 2</div>
         <div class="badge-version">v1.3.2.1</div>
-        <div class="badge-date">10 ноя 2025</div>
+        <div class="badge-date">13 ноя 2025</div>
       </div>
-      <div class="card-title">Hotfix</div>
-      <div class="card-short">Исправлен вылет при запуске миссий.</div>
+      <div class="card-title">Critical Hotfix</div>
+      <div class="card-short">Исправлен краш при запуске миссий.</div>
+      <div class="card-arrow">▼</div>
+      <div class="card-changelog">- Фикс ошибки памяти\n- Улучшена стабильность</div>
     </article>
-
   </section>
 
   <footer>
-    <div>© <span id="year"></span> OXeall Studios</div>
-    <div>Все обновления добавляются вручную через HTML.</div>
+    © <span id="year"></span> OXeall Studios • Games Changelog
   </footer>
 </div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Клик по карточке: открытие changelog
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('open'));
+  });
 </script>
 </body>
 </html>
